@@ -1,6 +1,11 @@
 package dev.trly.java.example.primitive.wrappers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class ForecastDeskApp {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ForecastDeskApp.class);
+
     private ForecastDeskApp() {
     }
 
@@ -35,10 +40,12 @@ public final class ForecastDeskApp {
                 wettestDay = rain;
                 wettestLabel = days[index];
             }
-            System.out.printf("%s: %.2f C, %.1f mm rain%n", days[index], temperature, rain);
+            LOGGER.info("{}: {} C, {} mm rain", days[index], String.format("%.2f", temperature),
+                String.format("%.1f", rain));
         }
 
-        System.out.printf("Average temperature: %.2f C%n", totalTemperature / temperatures.length);
-        System.out.printf("Wettest day: %s with %.1f mm%n", wettestLabel, wettestDay);
+        LOGGER.info("Average temperature: {} C",
+            String.format("%.2f", totalTemperature / temperatures.length));
+        LOGGER.info("Wettest day: {} with {} mm", wettestLabel, String.format("%.1f", wettestDay));
     }
 }
