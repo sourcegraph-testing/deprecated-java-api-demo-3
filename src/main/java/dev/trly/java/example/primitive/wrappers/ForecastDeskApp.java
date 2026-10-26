@@ -17,16 +17,16 @@ public final class ForecastDeskApp {
             "Thu"
         };
         final Double[] temperatures = {
-            new Double(18.5),
-            new Double(21.25),
-            new Double(19.75),
-            new Double(22.0)
+            Double.valueOf(18.5),
+            Double.valueOf(21.25),
+            Double.valueOf(19.75),
+            Double.valueOf(22.0)
         };
         final Float[] rainfall = {
-            new Float(0.4f),
-            new Float(0.0f),
-            new Float(1.1f),
-            new Float(0.2f)
+            Float.valueOf(0.4f),
+            Float.valueOf(0.0f),
+            Float.valueOf(1.1f),
+            Float.valueOf(0.2f)
         };
 
         double totalTemperature = 0.0;
